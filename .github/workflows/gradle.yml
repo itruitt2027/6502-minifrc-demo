@@ -20,12 +20,12 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.11
-    - name: Enter java directory
-      run: cd minifrc-demo-java
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+      working-directory: ./minifrc-demo-java
     - name: Build with Gradle
       run: ./gradlew build
+      working-directory: ./minifrc-demo-java
       
   build_kotlin:
 
@@ -37,10 +37,10 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.11
-    - name: Enter kotlin directory
-      run: cd minifrc-demo-kotlin
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+      working-directory: ./minifrc-demo-kotlin
     - name: Build with Gradle
       run: ./gradlew build
+      working-directory: ./minifrc-demo-kotlin
 
